@@ -357,3 +357,8 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 "Quickly open a buffer for scripbble
 map <leader><leader><leader> :e ~/buffer<cr>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" rails.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Change which file opens after executing :Rails command
+let g:rails_default_file='config/database.yml'
