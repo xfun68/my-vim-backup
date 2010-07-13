@@ -6,15 +6,14 @@ set nocompatible
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = ";"
-let g:mapleader = ";"
+let mapleader = ","
+let g:mapleader = ","
 
 " Sets how many lines of history VIM has to remember
 set history=10000
 
 " Enable filetype plugin
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
