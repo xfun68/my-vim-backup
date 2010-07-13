@@ -102,10 +102,12 @@ set ffs=unix,dos,mac "Default file types
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files and backups
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn backup off, since most stuff is in SVN, git anyway...
-set nobackup
+" $ mkdir ~/.tmp_files/vim/backups -p
+" $ mkdir ~/.tmp_files/vim/tmp -p
+set backup
 set nowb
-set noswapfile
+set backupdir=~/.tmp_files/vim/backups
+set directory=~/.tmp_files/vim/tmp
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -194,6 +196,15 @@ map <leader>tn :tabnew %<cr>
 map <leader>te :tabedit 
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove 
+
+" Tab contols, open, new, close and jump keys
+map to <Esc>:browse tabnew<cr> 
+map tn <Esc>:tabnew<cr>
+map tc <Esc>:tabclose<cr>
+map <F9> :tabfirst<cr>
+map <F10> :tabp<cr>
+map <F11> :tabn<cr>
+map <F12> :tablast<cr>
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
@@ -356,8 +367,15 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 "Quickly open a buffer for scripbble
 map <leader><leader><leader> :e ~/buffer<cr>
 
+" remove ^M from EOL
+"nnoremap <C-M> <Esc>:%s:::<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " rails.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Change which file opens after executing :Rails command
 let g:rails_default_file='config/database.yml'
+
+" Add recently accessed rails projects to menu (project plugin)
+set viminfo^=!
+
