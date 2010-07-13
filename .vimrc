@@ -119,7 +119,7 @@ set smarttab
 set lbr
 set tw=500
 
-set ai "Auto indent
+set autoindent "Auto indent
 set si "Smart indet
 set wrap "Wrap lines
 
